@@ -6,6 +6,12 @@ terraform {
       version = "~> 2.0"
     }
   }
+  backend "remote" {
+    organization = "DustinYochim"
+    workspaces {
+      name = "production-environment"
+    }
+  }
 }
 
 variable "do_token" {} # my DigitalOcean Personal Access Token
